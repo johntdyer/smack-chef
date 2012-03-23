@@ -6,3 +6,12 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+o = node[:smack][:user]
+g = node[:smack][:group]
+
+cookbook_file node[:smack][:path] do
+  source "smack.jar"
+  owner o
+  group g
+  mode "0664"
+end
