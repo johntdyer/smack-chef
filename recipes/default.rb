@@ -9,9 +9,9 @@
 o = node[:smack][:user]
 g = node[:smack][:group]
 
-cookbook_file node[:smack][:path] do
+cookbook_file "#{node[:smack][:path]}/smack.jar" do
   source "smack.jar"
   owner o
   group g
-  mode "0664"
+  mode "0755"
 end
